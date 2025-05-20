@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vacation Budget Tracker</title>
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Gooble Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Vacation Budget Tracker</h1>
+      <button id="themeToggle"><i class="bi bi-sun-fill"></i></button>
+    </header>
+
+    <!-- Keyboard Hint -->
+    <p>Use Tab to navigate between fields and Enter to submit.</p>
+
+    <!-- Form -->
+    <form id="expenseForm">
+        <div class="form-group floating">
+            <input type="text" id="desc" placeholder=" " required />
+            <label for="desc">Description</label>
+        </div>
+
+        <div class="form-group floating">
+            <input type="number" id="amount" placeholder=" " required />
+            <label for="amount">Amount</label>
+        </div>
+
+        <!-- Feedback -->
+        <p id="amount-feedback"></p>
+
+        <!-- Category -->
+        <div class="form-group custom-select">
+            <select id="category" required>
+              <option value="" disabled selected hidden>Select Category</option>
+              <option value="flight">✈️ Flight</option>
+              <option value="stay">🏨 Stay</option>
+              <option value="food">🍔 Food</option>
+              <option value="transport">🚗 Transport</option>
+              <option value="shopping">🛒 Shopping</option>
+              <option value="other">🛍️ Other</option>
+            </select>
+        </div>
+        <button type="submit">Add</button>
+    </form>
+
+    <div class="total">
+      Total: ₹<span id="total">0</span>
+    </div>
+
+    <ul id="expenseList"></ul>
+
+    <!-- PDF Download Button-->
+    <button id="downloadPDF" class="pdf-btn">📄 Download PDF</button>
+  </div>
+
+  <!-- PDF Download JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- COnfetti JS -->
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
