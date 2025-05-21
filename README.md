@@ -1,1 +1,1 @@
-🗺️ Vacation Planner with Budget Tracker
+🏖️ Vacation Budget Tracker
